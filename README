@@ -1,0 +1,40 @@
+USAGE
+-----
+
+<?php
+// APP_DIR will be automatically set, but can be overwritten if it doesn't work properly
+const API_DIR = __DIR__ . "/";
+require __DIR__ . "/vendor/autoload.php";
+
+RavenApi\Database::instance([
+    "host" => "db_host",
+    "port" => "db_port",
+    "username" => "db_username",
+    "password" => "db_password",
+    "database" => "db_database",
+    "options" => [],
+]);
+
+RavenApi\App::instance()->run();
+
+INSTALLATION
+------------
+
+composer require enicore-solutions/ravenapi
+
+For local development, specify local repository in composer.json:
+
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "~/path/to/ravenapi"
+        }
+    ],
+    "require": {
+        "enicore-solutions/ravenapi": "*"
+    }
+}
+
+
+
